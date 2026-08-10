@@ -1,0 +1,119 @@
+/* TagdiBody support site. The app's own tokens, so the pages read as part
+   of the same product rather than a generic template. */
+:root {
+  --ground: #0F0F12;
+  --card: #17171B;
+  --line: rgba(255, 255, 255, .08);
+  --ink: #FFFFFF;
+  --ink-2: rgba(255, 255, 255, .66);
+  --ink-3: rgba(255, 255, 255, .40);
+  --accent: #FFA62E;
+  --ui: ui-sans-serif, -apple-system, "Segoe UI", system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--ground);
+  color: var(--ink);
+  font-family: var(--ui);
+  font-size: 16px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 56px 22px 90px;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 34px;
+}
+
+.mark {
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  background: var(--accent);
+  color: var(--ground);
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  font-size: 17px;
+  flex: none;
+}
+
+.mark span { transform: translateY(-1px); }
+
+header b { font-size: 17px; font-weight: 700; letter-spacing: -.01em; }
+
+h1 {
+  font-size: clamp(28px, 5vw, 38px);
+  line-height: 1.12;
+  letter-spacing: -.022em;
+  margin: 0 0 12px;
+  text-wrap: balance;
+}
+
+.lede { color: var(--ink-2); margin: 0 0 12px; }
+
+.updated {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin: 0 0 40px;
+}
+
+h2 {
+  font-size: 20px;
+  letter-spacing: -.01em;
+  margin: 40px 0 10px;
+}
+
+h3 { font-size: 16px; margin: 26px 0 6px; }
+
+p, li { color: var(--ink-2); }
+p { margin: 0 0 14px; }
+ul { margin: 0 0 16px; padding-left: 20px; }
+li { margin-bottom: 7px; }
+strong { color: var(--ink); font-weight: 600; }
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 3px; }
+
+.panel {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 22px 24px;
+  margin: 0 0 34px;
+}
+
+.panel p:last-child { margin: 0; }
+
+.faq {
+  border-top: 1px solid var(--line);
+  padding: 20px 0 4px;
+}
+
+.faq h3 { margin-top: 0; color: var(--ink); }
+
+footer {
+  margin-top: 56px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+  font-size: 14px;
+  color: var(--ink-3);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+}
