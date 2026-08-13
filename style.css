@@ -64,15 +64,16 @@ button:focus-visible {
 
 .skip {
   position: absolute;
-  left: -9999px;
-  top: 0;
+  left: 8px;
+  top: 8px;
+  transform: translateY(-300%);
   background: var(--accent);
   color: var(--ground);
   padding: 10px 16px;
   font-weight: 700;
   z-index: 10;
 }
-.skip:focus { left: 8px; top: 8px; }
+.skip:focus { transform: none; }
 
 .wrap {
   max-width: 1060px;
@@ -189,14 +190,17 @@ strong { color: var(--ink); font-weight: 600; }
 .site-head nav a { color: var(--ink-2); }
 .site-head nav a:hover { color: var(--ink); text-decoration: none; }
 
+.site-head .cta.small { padding: 8px 15px; font-size: 14px; }
+
 @media (max-width: 600px) {
-  .site-head nav { gap: 16px; font-size: 14px; }
+  .site-head nav { gap: 14px; font-size: 14px; }
   .site-head .nav-hide { display: none; }
 }
 
 /* ---------- Buttons ---------- */
 
 .cta {
+  transition: transform .2s ease, filter .2s ease;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -211,7 +215,21 @@ strong { color: var(--ink); font-weight: 600; }
   border: 0;
   text-align: center;
 }
-.cta:hover { text-decoration: none; filter: brightness(1.06); }
+.cta:hover { text-decoration: none; filter: brightness(1.06); transform: translateY(-1px); }
+
+.cta.small {
+  font-size: 15px;
+  padding: 10px 19px;
+  border-radius: 10px;
+}
+
+.mini-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  margin-top: 24px;
+}
 
 .cta.ghost {
   background: transparent;
@@ -253,11 +271,13 @@ body:not(.prelaunch) .soon-only { display: none; }
 
 .hero .wrap {
   display: grid;
-  grid-template-columns: 1.05fr .95fr;
-  gap: clamp(28px, 5vw, 64px);
+  grid-template-columns: 1.05fr auto;
+  gap: clamp(28px, 5vw, 60px);
   align-items: center;
   position: relative;
 }
+
+.hero .shot { width: 306px; margin-right: clamp(0px, 2vw, 28px); }
 
 @media (max-width: 800px) {
   .hero .wrap { grid-template-columns: 1fr; }
@@ -270,6 +290,39 @@ body:not(.prelaunch) .soon-only { display: none; }
   gap: 12px;
   align-items: center;
 }
+
+/* ---------- Motion ----------
+   Entrance keyframes for the hero, scroll reveals for everything below
+   the fold. The .js gate matters: reveal targets start hidden ONLY when
+   the class is set by script, so with JS off (or a crawler that does not
+   run it) every element renders visible. */
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(22px); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-9px); }
+}
+
+.hero .copy > * { animation: rise .65s cubic-bezier(.2, .7, .2, 1) backwards; }
+.hero .copy > :nth-child(1) { animation-delay: .05s; }
+.hero .copy > :nth-child(2) { animation-delay: .13s; }
+.hero .copy > :nth-child(3) { animation-delay: .21s; }
+.hero .copy > :nth-child(4) { animation-delay: .29s; }
+.hero .shot {
+  animation: rise .75s cubic-bezier(.2, .7, .2, 1) .2s backwards,
+             float 7s ease-in-out 1.6s infinite;
+}
+
+.js .reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity .55s ease, transform .55s cubic-bezier(.2, .7, .2, 1);
+}
+.js .reveal.in { opacity: 1; transform: none; }
 
 /* ---------- Phone shots ---------- */
 
@@ -332,6 +385,10 @@ body:not(.prelaunch) .soon-only { display: none; }
   align-items: center;
 }
 
+.feature .shot { transform: rotate(-1.8deg); transition: transform .45s ease; }
+.feature.flip .shot { transform: rotate(1.8deg); }
+.feature .shot:hover { transform: rotate(0); }
+
 .feature.flip .wrap { grid-template-columns: 300px 1fr; }
 .feature.flip .copy { order: 2; }
 .feature.flip .shot { order: 1; }
@@ -382,7 +439,9 @@ body:not(.prelaunch) .soon-only { display: none; }
   border-radius: var(--radius);
   padding: 22px;
   counter-increment: step;
+  transition: transform .25s ease, border-color .25s ease;
 }
+.steps li:hover { transform: translateY(-4px); border-color: rgba(255, 166, 46, .35); }
 .steps li::before {
   content: counter(step);
   display: grid;
@@ -419,7 +478,9 @@ body:not(.prelaunch) .soon-only { display: none; }
   border: 1px solid var(--line);
   border-radius: var(--radius);
   padding: 22px;
+  transition: transform .25s ease, border-color .25s ease;
 }
+.card:hover { transform: translateY(-4px); border-color: rgba(255, 166, 46, .35); }
 .card h3 { margin-bottom: 6px; }
 .card p { margin: 0; font-size: 15px; }
 
@@ -455,6 +516,34 @@ body:not(.prelaunch) .soon-only { display: none; }
   font-size: 15px;
   color: var(--ink-3);
 }
+
+.actions-center { justify-content: center; }
+
+/* Scan-to-install. Desktop only (a phone taps the button instead) and
+   live only (the QR encodes the App Store URL). */
+.qr-box {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-top: 26px;
+}
+@media (min-width: 800px) {
+  body:not(.prelaunch) .qr-box { display: flex; }
+}
+.qr-box .qr {
+  width: 132px;
+  height: 132px;
+  background: #FFFFFF;
+  border-radius: 14px;
+  padding: 10px;
+}
+.qr-box .qr svg, .qr-box .qr img { width: 100%; height: 100%; display: block; }
+.qr-box span { font-size: 13px; color: var(--ink-3); }
+
+.closing { padding: clamp(60px, 9vw, 108px) 0; text-align: center; }
+.closing .wrap { max-width: 700px; }
+.closing .lede { margin-left: auto; margin-right: auto; }
 
 /* ---------- FAQ ---------- */
 
