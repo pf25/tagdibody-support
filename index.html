@@ -3,120 +3,359 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>TagdiBody Support</title>
-<meta name="description" content="Support and answers for TagdiBody, a strength training plan and workout logger for iPhone.">
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
-<div class="wrap">
+<title>Gym Workout Log and Strength Training Plan | TagdiBody</title>
+<meta name="description" content="TagdiBody builds your gym plan and tells you the exact weight to lift on every set. Log a set in two taps. One-time purchase for iPhone, no subscription.">
+<link rel="canonical" href="https://tagdibody.com/">
+<meta name="theme-color" content="#0F0F12">
 
-<header>
-  <div class="mark"><span>T</span></div>
-  <b>TagdiBody</b>
+<!-- Smart App Banner. Renders only once the app is live on the store, and
+     never inside a frame or the simulator. Harmless before then. -->
+<meta name="apple-itunes-app" content="app-id=6799544180">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="TagdiBody">
+<meta property="og:title" content="TagdiBody: the gym log that tells you what to lift">
+<meta property="og:description" content="A strength training plan built from your level, equipment and days, with the exact weight for every set. One-time purchase for iPhone.">
+<meta property="og:url" content="https://tagdibody.com/">
+<meta property="og:image" content="https://tagdibody.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="TagdiBody on iPhone, showing today's session with the weight for every lift.">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+
+<link rel="preload" href="assets/manrope-subset.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="style.css">
+
+<!-- SoftwareApplication, per Google's Software App documentation.
+     aggregateRating is deliberately ABSENT: Google requires a rating or a
+     review for the rich result, but the same guidelines forbid marking up
+     ratings that are not visible on the page and treat self-serving ones
+     as ineligible. Search Console will report the missing field as a
+     warning; that is the honest state until the App Store has real
+     ratings to mirror. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "TagdiBody",
+  "alternateName": "TagdiBody: Gym Workout Log",
+  "url": "https://tagdibody.com/",
+  "description": "TagdiBody builds a strength training plan from your level, equipment and days per week, prescribes the exact weight for every set, and logs your workouts. One-time purchase for iPhone, with no subscription and no account.",
+  "applicationCategory": "HealthApplication",
+  "applicationSubCategory": "Strength training",
+  "operatingSystem": "iOS 17.0",
+  "softwareVersion": "1.0",
+  "image": "https://tagdibody.com/assets/og.png",
+  "screenshot": [
+    "https://tagdibody.com/img/today.png",
+    "https://tagdibody.com/img/resting.png",
+    "https://tagdibody.com/img/progress.png"
+  ],
+  "featureList": [
+    "Generated strength training plan",
+    "Automatic weight progression",
+    "Rest timer with Dynamic Island and lock screen",
+    "One-off workouts that never move your plan",
+    "Progress charts and personal bests",
+    "iCloud sync",
+    "Apple Health bodyweight, read only"
+  ],
+  "offers": {
+    "@type": "Offer",
+    "price": "9.99",
+    "priceCurrency": "USD",
+    "category": "One-time purchase"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Arjun Navale"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Arjun Navale"
+  }
+}
+</script>
+</head>
+
+<body class="prelaunch">
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="wordmark" href="/"><span class="plate" aria-hidden="true"></span> TagdiBody</a>
+    <nav aria-label="Main">
+      <a class="nav-hide" href="#how">How it works</a>
+      <a class="nav-hide" href="#price">Price</a>
+      <a href="/support/">Support</a>
+    </nav>
+  </div>
 </header>
 
-<h1>Support</h1>
-<p class="lede">TagdiBody builds you a strength training plan, tells you what to lift, and logs it. This page answers the questions that come up most.</p>
-<p class="updated">Updated 10 August 2026</p>
+<main id="main">
 
-<div class="panel">
-  <p><strong>Email <a href="mailto:tagdibody@icloud.com">tagdibody@icloud.com</a></strong> and you will get a reply from a person, usually within a couple of days.</p>
-  <p>If you are reporting something that went wrong, a screenshot and the name of the screen you were on is enough to work with.</p>
-</div>
+<section class="hero">
+  <div class="wrap">
+    <div class="copy">
+      <h1>The gym log that tells you what to lift</h1>
+      <p class="lede">TagdiBody builds a strength training plan from your level, your equipment and the days you can train, then prescribes the exact weight for every set. Log a set in two taps. Hit your reps and the weight goes up next time.</p>
+      <div class="hero-actions">
+        <a class="cta live-only" href="https://apps.apple.com/app/tagdibody/id6799544180">Get TagdiBody on the App Store</a>
+        <span class="cta soon-only" aria-disabled="true">Coming soon to the App Store</span>
+        <a class="cta ghost" href="#how">See how it works</a>
+      </div>
+      <p class="cta-note">iPhone. One-time purchase, 9.99 US dollars. No subscription, no account, no ads.</p>
+    </div>
+    <div class="shot">
+      <img src="img/today.png" width="257" height="560" fetchpriority="high"
+           alt="The Today screen in TagdiBody, listing Back Squat, Deadlift, Leg Extension and Cable Crunch with the sets, rep range and exact weight for each.">
+    </div>
+  </div>
+</section>
 
-<h2>Common questions</h2>
+<section class="strip" aria-label="At a glance">
+  <div class="wrap">
+    <div><span class="stat-n">9.99 USD</span><span class="stat-l">Once, not monthly</span></div>
+    <div><span class="stat-n">No account</span><span class="stat-l">Nothing to sign into</span></div>
+    <div><span class="stat-n">Offline</span><span class="stat-l">Your phone does the work</span></div>
+    <div><span class="stat-n">Your data</span><span class="stat-l">Exportable, always</span></div>
+  </div>
+</section>
 
-<div class="faq">
-  <h3>Do I need an account?</h3>
-  <p>No. There is no login and no password, because there is no server to log in to. Everything lives on your iPhone.</p>
-</div>
+<section class="feature" id="plan">
+  <div class="wrap">
+    <div class="copy">
+      <p class="eyebrow">The plan</p>
+      <h2>A real program, not an empty spreadsheet</h2>
+      <p>Most logging apps hand you a blank screen and expect you to know what to do. TagdiBody asks five short questions, then generates a complete program: your training level sets the sets and reps, your equipment decides which exercises are even possible, and your days per week choose the split.</p>
+      <p>Underneath, the plan is built from twelve movement patterns rather than a fixed list of lifts, so the same structure works whether you have a full gym, a pair of dumbbells or nothing at all. No barbell? You still get a coherent plan, not a broken one.</p>
+      <ul class="ticks">
+        <li>Two to six training days, with the split you choose</li>
+        <li>Every exercise fitted to the equipment you actually own</li>
+        <li>Swap any lift for a suggestion that matches the pattern</li>
+      </ul>
+    </div>
+    <div class="shot">
+      <img src="img/reveal.png" width="257" height="560" loading="lazy"
+           alt="A generated four day plan in TagdiBody, showing each training day and the exercises in it.">
+    </div>
+  </div>
+</section>
 
-<div class="faq">
-  <h3>How do my workouts get to my other devices?</h3>
-  <p>Through your own iCloud, automatically, as long as you are signed in to the same Apple Account and iCloud Drive is on. Nothing is sent to us. If a new device looks empty for a moment on first launch, it is still pulling your history down.</p>
-</div>
+<section class="feature flip" id="progression">
+  <div class="wrap">
+    <div class="copy">
+      <p class="eyebrow">Progression</p>
+      <h2>The weight picks itself</h2>
+      <p>Every weighted lift is prescribed as a weight and a rep range. What happens next is a rule, not a guess:</p>
+      <ul class="ticks">
+        <li>Hit the top of the range on every set, and the weight goes up next session.</li>
+        <li>Land anywhere inside the range, and the weight holds while you chase more reps.</li>
+        <li>Fall short, and it steps the weight down straight away, so your next session is one you can finish.</li>
+      </ul>
+      <p>Bodyweight and band exercises progress by reps instead, and timed holds by seconds. Coming back after a couple of weeks off? One tap trims your weights so the first week back feels right, and one tap declines it.</p>
+      <p>Typing a different weight mid-session is not fighting the app. It carries that weight through your remaining sets and anchors the next session to what you actually lifted.</p>
+    </div>
+    <div class="shot">
+      <img src="img/summary.png" width="257" height="560" loading="lazy"
+           alt="A finished workout summary in TagdiBody, listing every set performed with its weight and reps.">
+    </div>
+  </div>
+</section>
 
-<div class="faq">
-  <h3>Does it work without internet?</h3>
-  <p>Yes, entirely. The internet is only used to sync between your own devices and to open an exercise demo video on YouTube.</p>
-</div>
+<section class="feature" id="timer">
+  <div class="wrap">
+    <div class="copy">
+      <p class="eyebrow">Rest timer</p>
+      <h2>A timer you do not have to watch</h2>
+      <p>The rest timer starts itself when you log a set and counts down in the Dynamic Island and on the lock screen, so you can put the phone down between sets. It chimes when your rest is up even with the phone locked and in your pocket.</p>
+      <p>It also holds the next set until the rest is done, which is the point of resting. Skip it any time you want, and drag the timer card anywhere on screen that suits you.</p>
+    </div>
+    <div class="shot">
+      <img src="img/resting.png" width="257" height="560" loading="lazy"
+           alt="TagdiBody counting down rest between sets, with the next set held until the timer finishes.">
+    </div>
+  </div>
+</section>
 
-<div class="faq">
-  <h3>I bought it before. How do I get it back?</h3>
-  <p>Reinstall it from the App Store while signed in to the Apple Account you bought it with. The App Store recognises the purchase and will not charge you again. There is no separate restore step, since the purchase is attached to your Apple Account and not to any account with us.</p>
-</div>
+<section class="feature flip" id="schedule">
+  <div class="wrap">
+    <div class="copy">
+      <p class="eyebrow">Your schedule</p>
+      <h2>No guilt mechanics, anywhere</h2>
+      <p>Miss a day and the plan simply slides forward. There is no missed-workout mark in the app, because a red cross on a calendar has never made anyone train. The calendar records what you did, never what you did not.</p>
+      <p>Feel like training on a rest day? Start a one-off workout. It is logged in full and counts toward your streak, but it moves nothing: not your rotation, not your weights. Train extra without breaking anything.</p>
+    </div>
+    <div class="shot">
+      <img src="img/calendar.png" width="257" height="560" loading="lazy"
+           alt="The TagdiBody calendar showing training days marked and a streak, with no missed day markers.">
+    </div>
+  </div>
+</section>
 
-<div class="faq">
-  <h3>Why did my weight go down?</h3>
-  <p>Because you missed the bottom of the rep range on a set. TagdiBody prescribes a range, like 5 to 7. Hit the top on every set and the weight goes up next time. Land anywhere inside it and the weight holds while you chase more reps. Fall below the bottom and it steps the weight down once, straight away, so the next session is one you can finish.</p>
-</div>
+<section class="feature" id="progress">
+  <div class="wrap">
+    <div class="copy">
+      <p class="eyebrow">Progress</p>
+      <h2>Watch the numbers go up</h2>
+      <p>Every lift is charted session by session, showing the heaviest set you actually performed and the reps you got for it, with an estimated one-rep max alongside. Records are shown in the unit you entered them in, so 40 kg is reported as 40 kg and 135 lb as 135 lb, with no conversion drift.</p>
+      <p>Your bodyweight chart reads from Apple Health if you let it. That permission is read only, it is only ever your weight, and nothing read from Health is stored by the app.</p>
+    </div>
+    <div class="shot">
+      <img src="img/progress.png" width="257" height="560" loading="lazy"
+           alt="Progress charts in TagdiBody showing maximum weight lifted per session for an exercise.">
+    </div>
+  </div>
+</section>
 
-<div class="faq">
-  <h3>Why is my weight the same as last time?</h3>
-  <p>You are inside the range but not at the top of it. Get every set to the top number and it will add weight.</p>
-</div>
+<section class="section" id="how">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">How it works</p>
+      <h2>From install to your first working set</h2>
+    </div>
+    <ol class="steps">
+      <li>
+        <h3>Answer five screens</h3>
+        <p>Experience level, a few numbers, the equipment you have, how many days you can train and how to split them. No account, no email, nothing to verify.</p>
+      </li>
+      <li>
+        <h3>Get your plan</h3>
+        <p>A full program appears, with starting weights worked out for each exercise from your level and bodyweight, ready to edit if you disagree.</p>
+      </li>
+      <li>
+        <h3>Train, and it adjusts</h3>
+        <p>Log sets as you go. Each session sets the weights for the next one, and the schedule follows you rather than the other way around.</p>
+      </li>
+    </ol>
+  </div>
+</section>
 
-<div class="faq">
-  <h3>What is a one-off workout?</h3>
-  <p>A session you log without touching your plan. It does not move your rotation, does not change any of your weights, and does not push tomorrow around. It still counts toward your streak. Use it for a gym session that is not part of the programme.</p>
-</div>
+<section class="section" id="inside">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Also in the box</p>
+      <h2>The details that make it usable in a real gym</h2>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <h3>Kilograms or pounds, natively</h3>
+        <p>Pounds are not a converted view of kilograms. Prescriptions land on real plate jumps in whichever unit you train in, so your numbers never drift by a fraction.</p>
+      </div>
+      <div class="card">
+        <h3>iCloud sync</h3>
+        <p>Your plan and history sync through your own private iCloud database. No server of ours ever sees your training.</p>
+      </div>
+      <div class="card">
+        <h3>Heavy and volume days</h3>
+        <p>An effort dial adjusts the whole session for the day you are having, without permanently changing your plan.</p>
+      </div>
+      <div class="card">
+        <h3>Full data export</h3>
+        <p>Export everything as JSON whenever you want: workouts, sets, weights, settings and progression state.</p>
+      </div>
+      <div class="card">
+        <h3>Built for accessibility</h3>
+        <p>Full Dynamic Type support up to the largest accessibility sizes, and VoiceOver labels throughout.</p>
+      </div>
+      <div class="card">
+        <h3>Warm up and cool down</h3>
+        <p>Suggestions matched to the muscles you are about to train, offered rather than enforced. Nothing is logged for you.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-<div class="faq">
-  <h3>I missed a few days. Am I behind?</h3>
-  <p>No, and the app will never tell you that you are. Your plan advances when you train, not when the calendar moves. If you have been away ten days or more it offers to take ten percent off your weights, and you can decline with one tap.</p>
-</div>
+<section class="section" id="price">
+  <div class="wrap">
+    <div class="price-card">
+      <p class="eyebrow">Price</p>
+      <span class="price-n">9.99 USD</span>
+      <p class="lede">Once. Not every month, not every year. Buy it, own it, and every future update to version 1 comes with it.</p>
+      <div class="hero-actions" style="justify-content: center">
+        <a class="cta live-only" href="https://apps.apple.com/app/tagdibody/id6799544180">Get TagdiBody on the App Store</a>
+        <span class="cta soon-only" aria-disabled="true">Coming soon to the App Store</span>
+      </div>
+      <ul class="price-list">
+        <li>No subscription</li>
+        <li>No account</li>
+        <li>No ads</li>
+        <li>No locked features</li>
+      </ul>
+    </div>
+  </div>
+</section>
 
-<div class="faq">
-  <h3>Can I do a different day of my plan today?</h3>
-  <p>Yes. Tap the session name on the Today screen and pick any day. The rotation carries on from the day you chose, so the one you skipped comes round again after a full cycle.</p>
-</div>
+<section class="section" id="faq">
+  <div class="wrap prose">
+    <div class="section-head">
+      <p class="eyebrow">Questions</p>
+      <h2>Before you buy</h2>
+    </div>
 
-<div class="faq">
-  <h3>Can I change the order of my training days?</h3>
-  <p>Yes. You tab, then your active plan, then the arrows next to each day. Whatever was coming up next stays next.</p>
-</div>
+    <div class="faq-item">
+      <h3>Is this a subscription?</h3>
+      <p>No. TagdiBody is a one-time purchase of 9.99 US dollars. There is nothing to cancel, no free trial that turns into a bill, and no feature held back behind a second payment.</p>
+    </div>
 
-<div class="faq">
-  <h3>An exercise does not suit me or my gym does not have it.</h3>
-  <p>Swap it. Open the exercise and choose Swap, and you will get suggestions that train the same movement. You can change it for today only or for the rest of the plan.</p>
-</div>
+    <div class="faq-item">
+      <h3>Do I need an account?</h3>
+      <p>No. There is no sign-up, no email and no password anywhere in the app. Your purchase lives in your App Store account, and your training lives on your phone.</p>
+    </div>
 
-<div class="faq">
-  <h3>The weight shown for a dumbbell exercise looks low.</h3>
-  <p>Dumbbell lifts are prescribed per hand, and the app says "each" next to them. Two 20 kg dumbbells is shown as 20 kg each.</p>
-</div>
+    <div class="faq-item">
+      <h3>Does it work without an internet connection?</h3>
+      <p>Yes. Everything runs on your phone, including generating your plan and working out your weights. A connection is only used to sync to your own iCloud.</p>
+    </div>
 
-<div class="faq">
-  <h3>Can I use pounds?</h3>
-  <p>Yes, there is a kg and lb switch on the workout screen and in settings. It changes the display only, so your history stays intact.</p>
-</div>
+    <div class="faq-item">
+      <h3>Will my data move to a new iPhone?</h3>
+      <p>Yes, through iCloud, if you are signed in. Your plan, history and weights come back automatically. You can also export everything as a JSON file at any time.</p>
+    </div>
 
-<div class="faq">
-  <h3>What does the app read from Apple Health?</h3>
-  <p>Your bodyweight, and nothing else, and only to draw one chart. It is never saved, never synced and never sent anywhere, and nothing is ever written back to Health. The app works completely if you say no.</p>
-</div>
+    <div class="faq-item">
+      <h3>What does it read from Apple Health?</h3>
+      <p>Only your bodyweight, and only to draw a chart. The permission is read only, TagdiBody never writes anything to Health, and nothing read from Health is stored by the app or synced to iCloud.</p>
+    </div>
 
-<div class="faq">
-  <h3>Can I get my data out?</h3>
-  <p>Yes. You tab, then Export, which produces a JSON file containing everything, and the share sheet lets you send it wherever you like. Nothing leaves the app unless you do this.</p>
-</div>
+    <div class="faq-item">
+      <h3>What happens if I miss a workout?</h3>
+      <p>Nothing. Your plan advances when you train, not when the calendar says so, so the next session is simply the next one whenever you show up. The app has no missed-day state to feel bad about.</p>
+    </div>
 
-<div class="faq">
-  <h3>How do I delete everything?</h3>
-  <p>You tab, then Delete all my data. It is deleted from your iPhone immediately and permanently, and removed from your iCloud as the deletion syncs, usually within a minute or two. There is no copy on our side to delete, because there never was one.</p>
-</div>
+    <div class="faq-item">
+      <h3>Can I train in pounds?</h3>
+      <p>Yes, and properly. Weights in pounds are prescribed on real pound plate jumps rather than converted from kilograms, so 135 stays 135. You can switch units whenever you like without changing anything already recorded.</p>
+    </div>
 
-<div class="faq">
-  <h3>Something is broken.</h3>
-  <p>Please email <a href="mailto:tagdibody@icloud.com">tagdibody@icloud.com</a> with what you were doing and a screenshot. It genuinely helps, and it gets fixed faster than you would expect.</p>
-</div>
+    <div class="faq-item">
+      <h3>Is there an Apple Watch app, or an Android version?</h3>
+      <p>No to both. TagdiBody is an iPhone app. Building it without accounts or a server is what keeps it a one-time purchase, and that choice rules Android out.</p>
+    </div>
 
-<footer>
-  <a href="privacy.html">Privacy Policy</a>
-  <a href="mailto:tagdibody@icloud.com">tagdibody@icloud.com</a>
-  <span>TagdiBody for iPhone</span>
+    <div class="faq-item">
+      <h3>Who made this?</h3>
+      <p>One lifter who got tired of paying a yearly subscription for a workout logger and used about a tenth of it. Questions go to a person, at <a href="mailto:tagdibody@icloud.com">tagdibody@icloud.com</a>.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <span>TagdiBody</span>
+    <a href="/support/">Support</a>
+    <a href="/privacy.html">Privacy</a>
+    <a href="mailto:tagdibody@icloud.com">tagdibody@icloud.com</a>
+    <span class="spacer">Made for iPhone</span>
+  </div>
 </footer>
 
-</div>
 </body>
 </html>
